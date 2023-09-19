@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Foo Template</title>
+</head>
+<body>
+    <h1>
+        <p>The name of the creator is {{person.name.upper}} {{person.surname.lower}}</p>
+        <p>Object list {{l_person}}</p>
+        <p>Object list {{l_person.0}}</p>
+
+        <p><strong>List of persons:</strong></p>
+        <p>
+            {% for element in l_person %}
+                <p>{{element}}</p>
+            {% endfor %}
+        </p>
+
+        <p>
+            <ul>
+            {% for element in l_person %}
+                <li>{{element}}</li>
+            {% endfor %}
+            </ul>
+        </p>
+
+        <p>
+            <ul>
+            {% if l_person %}
+                {% for element in l_person %}
+                    <li>{{element}}</li>
+                {% endfor %}
+            {% else %}
+                <p>The list is void</p>
+            {% endif %}
+            </ul>
+        </p>
+
+        <p>
+            {% if person.name == 'Fran' %}
+                <p>Yes</p>
+            {% else %}
+                <p>No</p>
+            {% endif %}
+        </p>
+    </h1>
+
+    <h2>
+        {% if person.name == 'Fran' %}
+    </h2>
+</body>
+</html>
